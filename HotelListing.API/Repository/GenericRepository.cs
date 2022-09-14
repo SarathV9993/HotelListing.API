@@ -39,12 +39,12 @@ namespace HotelListing.API.Repository
 
         public async Task<T> GetAsync(int? id)
         {
-            if(id is null)
+            if (id is null)
             {
                 return null;
             }
 
-            return await hotelListingDbContext.Set<T>().FindAsync();
+            return await hotelListingDbContext.Set<T>().FindAsync(id);
         }
 
         public async Task UpdateAsync(T entity)
